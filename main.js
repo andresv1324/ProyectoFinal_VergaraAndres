@@ -49,6 +49,37 @@ class BebidaControlador {
             })
         })
     }
+
+    filtro(){
+        const valorMini =document.getElementById("valorMin")
+        const valorMaxi =document.getElementById("valorMax")
+        let valorMinimo = 0
+        let valorMaximo = Infinity
+
+        valorMini.addEventListener("change",()=>{
+            if (valorMini.value>0){
+                valorMinimo = valorMini.value
+                console.log(valorMini.value)
+                this.filtroPrecio(valorMinimo,valorMaximo)
+                this.verDOMCont()
+            }
+        })
+
+        valorMaxi.addEventListener("input",()=>{
+            valorMaximo = valorMaxi.value 
+            console.log(valorMaxi.value)
+            this.filtroPrecio(valorMinimo,valorMaximo)
+            this.verDOMCont()
+            
+        })
+    }
+
+    filtroPrecio(min,max){
+        this.listaBebidas = []
+        this.agregar()
+
+        this.listaBebidas.filter(bebida => min<= bebida.precio  && bebida.precio <= max)
+    }
 }
 
 class Carrito {
@@ -260,3 +291,4 @@ carrito.verDOMCarr()
 
 //RENDIRIZACION DE LA VISTA GENERAL
 BC.verDOMCont()
+BC.filtro()
