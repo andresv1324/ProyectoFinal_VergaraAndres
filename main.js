@@ -13,17 +13,20 @@ class Bebidas {
 class BebidaControlador {
     constructor() {
         this.listaBebidas = []
+        this.listaBebidasFiltradas = []
     }
 
     agregar(bebida) {
         this.listaBebidas.push(bebida)
+        this.listaBebidasFiltradas.push(bebida)
     }
 
     //DESCRIPCION PRODUCTO VISTA GENERAL
     verDOMCont() {
         let contenedorBebidas = document.getElementById("contenedorBebidas")
 
-        this.listaBebidas.forEach(bebida => {
+        contenedorBebidas.innerHTML = ""
+        this.listaBebidasFiltradas.forEach(bebida => {
             contenedorBebidas.innerHTML += `
             <div class="card menu" style="width: 18rem;">
                 <img src="${bebida.img}" class="card-img-top" alt="${bebida.alt}">
@@ -39,7 +42,7 @@ class BebidaControlador {
         })
 
         //ACCION DE AGREGAR A EL CARRITO Y VER 
-        this.listaBebidas.forEach(bebida => {
+        this.listaBebidasFiltradas.forEach(bebida => {
             const be = document.getElementById(`be_${bebida.id}`)
 
             be.addEventListener("click", () => {
@@ -50,35 +53,38 @@ class BebidaControlador {
         })
     }
 
-    filtro(){
-        const valorMini =document.getElementById("valorMin")
-        const valorMaxi =document.getElementById("valorMax")
+    filtro() {
+        const valorMini = document.getElementById("valorMin")
+        const valorMaxi = document.getElementById("valorMax")
         let valorMinimo = 0
         let valorMaximo = Infinity
 
-        valorMini.addEventListener("change",()=>{
-            if (valorMini.value>0){
+        valorMini.addEventListener("change", () => {
+            if (valorMini.value > 0) {
                 valorMinimo = valorMini.value
                 console.log(valorMini.value)
-                this.filtroPrecio(valorMinimo,valorMaximo)
+                this.listaBebidasFiltradas = this.listaBebidas
+                this.filtroPrecio(valorMinimo, valorMaximo)
                 this.verDOMCont()
             }
         })
 
-        valorMaxi.addEventListener("input",()=>{
-            valorMaximo = valorMaxi.value 
-            console.log(valorMaxi.value)
-            this.filtroPrecio(valorMinimo,valorMaximo)
-            this.verDOMCont()
-            
+        valorMaxi.addEventListener("change", () => {
+            valorMaximo = valorMaxi.value
+            if (valorMaxi.value == 0) {
+                this.listaBebidasFiltradas = this.listaBebidas
+                this.verDOMCont()
+            } else {
+                this.listaBebidasFiltradas = this.listaBebidas
+                this.filtroPrecio(valorMinimo, valorMaximo)
+                this.verDOMCont()
+            }
+
         })
     }
 
-    filtroPrecio(min,max){
-        this.listaBebidas = []
-        this.agregar()
-
-        this.listaBebidas.filter(bebida => min<= bebida.precio  && bebida.precio <= max)
+    filtroPrecio(min, max) {
+        this.listaBebidasFiltradas = this.listaBebidas.filter((bebida) => min <= bebida.precio && bebida.precio <= max)
     }
 }
 
@@ -131,13 +137,8 @@ class Carrito {
 
 
             const card = document.createElement("div");
-
             card.classList.add("card", "menuCarrito", "mb-3");
-
             card.style.maxWidth = "540px";
-
-
-
             card.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-4">
@@ -248,7 +249,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btncompraFin.addEventListener('click', function () {
         localStorage.removeItem("listacarrito")
-        carrito.listaCarrito = []
+        carrito.listaCarrito.forEach((bebida) => {
+            carrito.eliminarBebida(bebida.id)
+        })
         carrito.verDOMCarr()
     })
 })
