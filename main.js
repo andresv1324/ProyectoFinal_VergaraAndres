@@ -248,10 +248,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const btncompraFin = document.querySelector('.compraFin')
 
     btncompraFin.addEventListener('click', function () {
-        localStorage.removeItem("listacarrito")
-        carrito.listaCarrito.forEach((bebida) => {
-            carrito.eliminarBebida(bebida.id)
+        Swal.fire({
+            title: 'Desea Finalizar Su Compra?',
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                localStorage.removeItem("listacarrito")
+                carrito.listaCarrito.forEach((bebida) => {
+                    carrito.eliminarBebida(bebida.id)
+                })
+                Swal.fire('Compra Terminada!', '', 'success')
+            }
         })
+
+
         carrito.verDOMCarr()
     })
 })
