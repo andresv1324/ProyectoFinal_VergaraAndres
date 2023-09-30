@@ -201,7 +201,7 @@ class Carrito {
                     if (result.isConfirmed) {
                         setTimeout(()=>{
                             this.eliminarBebida(bebida.id)
-                        },10 00)
+                        },1000)
                         Swal.fire(
                             'Eliminado!',
                             'Se Quito Al Completo Su Bebida',
