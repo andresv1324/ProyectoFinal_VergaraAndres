@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "nombre": "Speed",
+        "descripcion": "Speed Unlimited Energy Drink es una bebida sin alcohol, que contiene Cafeína, Taurina y Vitaminas.",
+        "precio": 393,
+        "cantidad": 1,
+        "img": "img/Speed.webp",
+        "alt": "Speed,"
+    },
+    {
+        "id": 2,
+        "nombre": "Coca Cola",
+        "descripcion": "Es una bebida azucarada gaseosa vendida a nivel mundial en tiendas, restaurantes y máquinas expendedoras en más de doscientos países o territorios.",
+        "precio": 229,
+        "cantidad": 1,
+        "img": "img/CocaCola.webp",
+        "alt": "Coca Cola enlatada"
+    },
+    {
+        "id": 3,
+        "nombre": "Coca Cola Zero",
+        "descripcion": "Es un refresco que tiene un gran sabor, de alta calidad, con cero calorías, cero azúcar y baja en sodio.",
+        "precio": 229,
+        "cantidad": 1,
+        "img": "img/CocaColaZero.webp",
+        "alt": "Coca Cola Zero"
+    },
+    {
+        "id": 4,
+        "nombre": "Pepsi",
+        "descripcion": "Es una bebida azucarada y gaseosa de cola creada en los Estados Unidos y producida por la compañía PepsiCo.",
+        "precio": 180,
+        "cantidad": 1,
+        "img": "img/Pepsi.webp",
+        "alt": "Pepsi"
+    },
+    {
+        "id": 5,
+        "nombre": "Pepsi Zero",
+        "descripcion": "Pepsi Zero Sugar ha llegado y es exactamente lo que dice es: una audaz y refrescante soda cero calorías, con el máximo sabor",
+        "precio": 178,
+        "cantidad": 1,
+        "img": "img/PepsiZero.webp",
+        "alt": "Pepsi Zero"
+    },
+    {
+        "id": 6,
+        "nombre": "Fanta",
+        "descripcion": "Bebida Regular con Naranja Con una personalidad brillante, burbujeante y frutal",
+        "precio": 136,
+        "cantidad": 1,
+        "img": "img/Fanta.webp",
+        "alt": "Fanta"
+    },
+    {
+        "id": 7,
+        "nombre": "Sprite",
+        "descripcion": "Burbujeante, refrescante y de sabor ligero, Sprite es un refresco con sabor a lima y limón.",
+        "precio": 150,
+        "cantidad": 1,
+        "img": "img/Sprite.webp",
+        "alt": "Sprite"
+    },
+    {
+        "id": 8,
+        "nombre": "Fernet Branca",
+        "descripcion": "Es un licor de origen italiano específicamente en la ciudad de Milán (1845), inventado por Bernardino Branca",
+        "precio": 2988,
+        "cantidad": 1,
+        "img": "img/FernetBranca.webp",
+        "alt": "Fernet Branca"
+    },
+    {
+        "id": 9,
+        "nombre": "Vodka",
+        "descripcion": "Es un aguardiente transparente, incoloro e inodoro. Se produce generalmente por la fermentación de granos, aunque se ha llegado a obtener de la cáscara de la papa.",
+        "precio": 2240,
+        "cantidad": 1,
+        "img": "img/Vodka.webp",
+        "alt": "Vodka"
+    },
+    {
+        "id": 10,
+        "nombre": "Vino Blanco Fedrico",
+        "descripcion": "Ideal para acompañar todo tipo de pescados y mariscos, así como quesos azules y suaves. Vista: De color pajizo brillante.",
+        "precio": 971,
+        "cantidad": 1,
+        "img": "img/VinoBlancoFederico.webp",
+        "alt": "Vino Blanco Fedrico"
+    },
+    {
+        "id": 11,
+        "nombre": "Vino Blanco Chenin",
+        "descripcion": "Los vinos de la variedad Chenin Blanc presentan tonalidades amarillo verdosas con reflejos dorados. En aromas recuerda a repostería y frutos secos.",
+        "precio": 2055,
+        "cantidad": 1,
+        "img": "img/VinoBlancoChenin.webp",
+        "alt": "Vino Blanco Chenin"
+    },
+    {
+        "id": 12,
+        "nombre": "Vino Blanco Marlo",
+        "descripcion": "Un vino de color verdoso muy seductor y atrapante. Aromas frutales y florales de gran intensidad son típico de los varietales que lo componen",
+        "precio": 1355,
+        "cantidad": 1,
+        "img": "img/VinoBlancoMarlo.webp",
+        "alt": "Vino Blanco Marlo"
+    }
+]

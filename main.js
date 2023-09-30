@@ -330,31 +330,28 @@ document.addEventListener('DOMContentLoaded', function () {
 const BC = new BebidaControlador()
 const carrito = new Carrito()
 
-//Bebidas
-BC.agregar(new Bebidas(1, "Speed", "Speed Unlimited Energy Drink es una bebida sin alcohol, que contiene Cafeína, Taurina y Vitaminas.", 393, "img/Speed.webp", "Speed,")
-)
-BC.agregar(new Bebidas(2, "Coca Cola", "Es una bebida azucarada gaseosa vendida a nivel mundial en tiendas, restaurantes y máquinas expendedoras en más de doscientos países o territorios.", 229, "img/CocaCola.webp", "Coca Cola enlatada")
-)
-BC.agregar(new Bebidas(3, "Coca Cola Zero", "Es un refresco que tiene un gran sabor, de alta calidad, con cero calorías, cero azúcar y baja en sodio.", 229, "img/CocaColaZero.webp", "Coca Cola Zero")
-)
-BC.agregar(new Bebidas(4, "Pepsi", "Es una bebida azucarada y gaseosa de cola creada en los Estados Unidos y producida por la compañía PepsiCo.", 180, "img/Pepsi.webp", "Pepsi")
-)
-BC.agregar(new Bebidas(5, "Pepsi Zero", "Pepsi Zero Sugar ha llegado y es exactamente lo que dice es: una audaz y refrescante soda cero calorías, con el máximo sabor", 178, "img/PepsiZero.webp", "Pepsi Zero")
-)
-BC.agregar(new Bebidas(6, "Fanta", "Bebida Regular con Naranja Con una personalidad brillante, burbujeante y frutal", 136, "img/Fanta.webp", "Fanta")
-)
-BC.agregar(new Bebidas(7, "Sprite", "Burbujeante, refrescante y de sabor ligero, Sprite es un refresco con sabor a lima y limón.", 150, "img/Sprite.webp", "Sprite")
-)
-BC.agregar(new Bebidas(8, "Fernet Branca", "Es un licor de origen italiano específicamente en la ciudad de Milán (1845), inventado por Bernardino Branca", 2988, "img/FernetBranca.webp", "Fernet Branca")
-)
-BC.agregar(new Bebidas(9, "Vodka", "Es un aguardiente transparente, incoloro e inodoro. Se produce generalmente por la fermentación de granos, aunque se ha llegado a obtener de la cáscara de la papa.", 2240, "img/Vodka.webp", "Vodka")
-)
-BC.agregar(new Bebidas(10, "Vino Blanco Fedrico", "Ideal para acompañar todo tipo de pescados y mariscos, así como quesos azules y suaves. Vista: De color pajizo brillante.", 971, "img/VinoBlancoFederico.webp", "Vino Blanco Fedrico")
-)
-BC.agregar(new Bebidas(11, "Vino Blanco Chenin", "Los vinos de la variedad Chenin Blanc presentan tonalidades amarillo verdosas con reflejos dorados. En aromas recuerda a repostería y frutos secos.", 2055, "img/VinoBlancoChenin.webp", "Vino Blanco Chenin")
-)
-BC.agregar(new Bebidas(12, "Vino Blanco Marlo", "Un vino de color verdoso muy seductor y atrapante. Aromas frutales y florales de gran intensidad son típico de los varietales que lo componen", 1355, "img/VinoBlancoMarlo.webp", "Vino Blanco Marlo")
-)
+// Bebidas 
+// Carga De las Bebidas
+fetch('bebidasAPI.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(bebida => {
+            BC.agregar(new Bebidas(
+                bebida.id,
+                bebida.nombre,
+                bebida.descripcion,
+                bebida.precio,
+                bebida.img,
+                bebida.alt
+            ));
+        });
+        
+        // RENDERIZACION
+        BC.verDOMCont()
+        BC.filtro()
+    })
+    .catch(error => console.error('Error cargando las bebidas:', error));
+
 
 
 //RENDIRIZACION DE LA VISTA CARRITO
