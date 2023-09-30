@@ -47,6 +47,21 @@ class BebidaControlador {
 
             be.addEventListener("click", () => {
                 carrito.agregar(bebida)
+                // NOTIFICACION AL AGREGAR PRODUCTO
+                setTimeout(()=>{
+                    Toastify({
+                        text: "Bebida Añadida\n Al Carrito",
+                        duration: 1500,
+                        gravity: "bottom", // `top` or `bottom`
+                        position: "right", // `left`, `center` or `right`
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                    }).showToast();
+                },1200)
+                
+
                 carrito.almacenStorage()
                 carrito.verDOMCarr()
             })
@@ -173,7 +188,27 @@ class Carrito {
             //EVENTO DEL BOTON TACHO
             const btnTacho = document.getElementById(`tacho_${bebida.id}`)
             btnTacho.addEventListener("click", () => {
-                this.eliminarBebida(bebida.id)
+                Swal.fire({
+                    title: 'Esta Usted Seguro?',
+                    text: "Eliminara Toda La Cantidad \n De Su Bebida!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Confirmar!',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        setTimeout(()=>{
+                            this.eliminarBebida(bebida.id)
+                        },10 00)
+                        Swal.fire(
+                            'Eliminado!',
+                            'Se Quito Al Completo Su Bebida',
+                            'success'
+                        )
+                    }
+                })
             })
 
             //EVENTO DEL BOTON +
@@ -238,9 +273,30 @@ class Carrito {
 
 //EVENTO PARA EL BOTON DE TRASH DEL CARRITO || BORRAR ELEMENTOS DEL STORAGE Y DEL CARRITO
 document.querySelector(".trash").addEventListener("click", () => {
-    localStorage.removeItem("listacarrito")
-    carrito.listaCarrito = []
-    carrito.verDOMCarr()
+
+    Swal.fire({
+        title: 'Esta Usted Seguro?',
+        text: "Eliminara Todas Las Bebidas En el Carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem("listacarrito")
+            carrito.listaCarrito = []
+            carrito.verDOMCarr()
+            Swal.fire(
+                'Carrito Vacio!',
+                'Su Carrito Fue Vaciado',
+                'success'
+            )
+        }
+    })
+
+
 })
 
 //EVENTO PARA TERMINAR COMPRAR (BORRA EL LOCALSTORAGE)
@@ -254,13 +310,13 @@ document.addEventListener('DOMContentLoaded', function () {
             confirmButtonText: 'Confirmar',
             cancelButtonText: 'Cancelar',
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
+                const cantidadTotal = carrito.calcularCantidadTotal(); // Obtener el total
+                Swal.fire(`Compra Terminada! \n$${cantidadTotal}`, '', 'success')
                 localStorage.removeItem("listacarrito")
                 carrito.listaCarrito.forEach((bebida) => {
                     carrito.eliminarBebida(bebida.id)
                 })
-                Swal.fire('Compra Terminada!', '', 'success')
             }
         })
 
