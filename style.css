@@ -1,11 +1,35 @@
 /* Estilos generales */
 body {
-    background-color: rgb(98, 23, 186);
+    background-color: #56A3A6;
 }
 
 /* Estilos de la barra de navegación */
 .navbar {
-    background-color: rgb(50, 251, 226);
+    background-color: #084C61;
+}
+
+/* Estilos para el contenido principal */
+main {
+    display: flex;
+}
+
+/* Contenedor del filtro */
+.contenedorFiltro {
+    margin-top: 2em;
+    margin-left: 0.5em;
+}
+
+/* Estilos para el título del buscador */
+.tituloBuscador {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+/* Estilos para el buscador */
+.buscador {
+    width: 221px;
+    height: 192px;
 }
 
 /* Estilos de los valores de bebidas */
@@ -29,24 +53,24 @@ body {
 
 /* Estilos de las cartas del menú y el buscador */
 .menu, .buscador {
-    background-color: rgb(168, 83, 255);
-    box-shadow: 0 0 15px rgba(153, 255, 0, 0.8);
+    background-color: #517b85;
+    box-shadow: 0 0 15px rgba(227, 181, 5, 0.8);
 }
 
 /* Estilos de las cartas del carrito y el modal */
 .menuCarrito {
-    box-shadow: 0 0 10px rgba(153, 255, 0, 0.8);
-    background-color: rgb(168, 83, 255);
+    box-shadow: 0 0 10px rgba(227, 181, 5, 0.8);
+    background-color: #56a3a6;
 }
 
 /* Estilos del contenido del modal */
 .modal-content {
-    background-color: rgb(138, 43, 226);
+    background-color: #084c61;
 }
 
 /* Estilos de la parte superior del modal */
 .modal-header {
-    border-bottom: solid rgba(153, 255, 0, 0.8) 2px;
+    border-bottom: solid rgba(227, 181, 5, 0.8) 2px;
 }
 
 /* Estilos del cuerpo del modal */
@@ -56,7 +80,7 @@ body {
 
 /* Estilos de la parte inferior del modal */
 .modal-footer {
-    border-top: solid rgba(153, 255, 0, 0.8) 2px;
+    border-top: solid rgba(227, 181, 5, 0.8) 2px;
 }
 
 /* Estilos para cantidad total y valor total */
@@ -76,33 +100,10 @@ body {
 /* Estilos del pie de página */
 footer {
     color: black;
-    background-color: rgb(50, 251, 226);
+    background-color: 084c61;
     text-align: center;
     padding: 1em 0;
     margin: 0;
 }
 
-/* Estilos para el contenido principal */
-main {
-    display: flex;
-}
 
-/* Contenedor del filtro */
-.contenedorFiltro {
-    background-color: brown;
-    margin-top: 2em;
-    margin-left: 0.5em;
-}
-
-/* Estilos para el título del buscador */
-.tituloBuscador {
-    display: flex;
-    justify-content: center;
-    font-size: 1.5em;
-}
-
-/* Estilos para el buscador */
-.buscador {
-    width: 221px;
-    height: 192px;
-}
