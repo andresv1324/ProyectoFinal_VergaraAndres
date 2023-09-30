@@ -1,26 +1,25 @@
+/* Estilos generales */
 body {
     background-color: rgb(98, 23, 186);
 }
 
-
-/* Estilos DOM */
-
-.navbar{
+/* Estilos de la barra de navegación */
+.navbar {
     background-color: rgb(50, 251, 226);
 }
 
+/* Estilos de los valores de bebidas */
 .valoresBebida {
     bottom: 0;
     width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* Los elementos estarán uno encima del otro */
     align-items: flex-end;
-    /* Los elementos estarán alineados a la derecha */
 }
 
-.lista{
+/* Estilos de la lista */
+.lista {
     justify-items: center;
     margin: 2em;
     display: grid;
@@ -28,47 +27,45 @@ body {
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
 }
 
-/* ESTILOS DE LAS CART DEL MENU */
-.menu, .buscador{
+/* Estilos de las cartas del menú y el buscador */
+.menu, .buscador {
     background-color: rgb(168, 83, 255);
     box-shadow: 0 0 15px rgba(153, 255, 0, 0.8);
 }
 
-
-/* ESTILOS DEL MODAL */
-
-/* ESTILOS DE LAS CART DEL MODAL */
+/* Estilos de las cartas del carrito y el modal */
 .menuCarrito {
     box-shadow: 0 0 10px rgba(153, 255, 0, 0.8);
     background-color: rgb(168, 83, 255);
 }
 
-/* CONTENEDOR DEL MODAL */
+/* Estilos del contenido del modal */
 .modal-content {
     background-color: rgb(138, 43, 226);
 }
 
-/* PARTE DE ARRIBA DEL MODAL*/
+/* Estilos de la parte superior del modal */
 .modal-header {
     border-bottom: solid rgba(153, 255, 0, 0.8) 2px;
 }
 
-/* INTERIOR DEL MODAL */
+/* Estilos del cuerpo del modal */
 .modal-body {
     background-color: rgb(124, 124, 125);
 }
 
-/* PARDE DE ABAJO DEL MODAL */
+/* Estilos de la parte inferior del modal */
 .modal-footer {
     border-top: solid rgba(153, 255, 0, 0.8) 2px;
 }
 
+/* Estilos para cantidad total y valor total */
 #cantidadTotal, .valorTotal {
     font-weight: bold;
 }
 
-/* TACHOS DEL MODAL */
-.trashCarrito, .trash{
+/* Estilos para los iconos de borrar */
+.trashCarrito, .trash {
     background-color: rgb(255, 0, 0);
 }
 
@@ -76,8 +73,7 @@ body {
     margin-right: 8em;
 }
 
-
-
+/* Estilos del pie de página */
 footer {
     color: black;
     background-color: rgb(50, 251, 226);
@@ -86,25 +82,27 @@ footer {
     margin: 0;
 }
 
-
-main{
+/* Estilos para el contenido principal */
+main {
     display: flex;
 }
 
-
-.hola{
+/* Contenedor del filtro */
+.contenedorFiltro {
     background-color: brown;
     margin-top: 2em;
     margin-left: 0.5em;
 }
 
-.tituloBuscador{
+/* Estilos para el título del buscador */
+.tituloBuscador {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
 }
 
-.buscador{
+/* Estilos para el buscador */
+.buscador {
     width: 221px;
     height: 192px;
 }
